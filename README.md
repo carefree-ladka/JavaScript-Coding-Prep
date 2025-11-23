@@ -2,6 +2,34 @@
 
 A comprehensive collection of Data Structures and Algorithms implemented in JavaScript, organized by problem patterns and categories.
 
+## 🔗 Quick Links
+
+### 📚 Study Plans
+- [LeetCode Top Interview 150](https://leetcode.com/studyplan/top-interview-150/) - Complete interview preparation
+- [LeetCode SQL 50](https://leetcode.com/studyplan/top-sql-50/) - Database fundamentals
+- [LeetCode Graph Theory](https://leetcode.com/explore/learn/card/graph/) - Graph algorithms mastery
+- [NeetCode 150](https://neetcode.io/practice) - Curated coding problems
+
+### 🎯 Practice Platforms
+- [LeetCode](https://leetcode.com/) - Primary coding interview platform
+- [HackerRank](https://www.hackerrank.com/) - Programming challenges
+- [CodeSignal](https://codesignal.com/) - Technical assessments
+- [Pramp](https://www.pramp.com/) - Mock interviews
+
+### 📖 Learning Resources
+- [Cracking the Coding Interview](https://www.crackingthecodinginterview.com/) - Essential interview book
+- [Algorithm Visualizer](https://algorithm-visualizer.org/) - Visual algorithm learning
+- [Big-O Cheat Sheet](https://www.bigocheatsheet.com/) - Time/space complexity reference
+- [JavaScript Algorithms](https://github.com/trekhleb/javascript-algorithms) - Algorithm implementations
+
+### 🏢 Company Interview Guides
+- [Google Interview Process](https://careers.google.com/how-we-hire/) - Google hiring guide
+- [Meta Interview Prep](https://www.metacareers.com/life/preparing-for-your-software-engineer-interview-at-meta/) - Meta technical interviews
+- [Amazon Leadership Principles](https://www.amazon.jobs/en/principles) - Amazon behavioral interviews
+- [System Design Primer](https://github.com/donnemartin/system-design-primer) - System design interviews
+
+---
+
 ## 📁 Structure
 
 ```
