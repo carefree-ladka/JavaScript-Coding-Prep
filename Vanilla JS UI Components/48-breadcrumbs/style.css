@@ -1,0 +1,168 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #f8fafc;
+    color: #334155;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #1e293b;
+}
+
+.demo-section {
+    background: white;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.demo-section h3 {
+    margin-bottom: 20px;
+    color: #1e293b;
+}
+
+/* Default Breadcrumb */
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 0;
+    font-size: 14px;
+}
+
+.breadcrumb-link {
+    color: #3b82f6;
+    text-decoration: none;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+.breadcrumb-link:hover {
+    background: #eff6ff;
+    color: #2563eb;
+}
+
+.breadcrumb-current {
+    color: #6b7280;
+    font-weight: 500;
+}
+
+.breadcrumb-link::after {
+    content: '/';
+    margin-left: 12px;
+    color: #d1d5db;
+}
+
+/* Arrow Style */
+.breadcrumb-arrows {
+    margin-bottom: 20px;
+}
+
+.breadcrumb-arrows .breadcrumb-link::after,
+.breadcrumb-arrows a::after {
+    content: '›';
+    margin-left: 8px;
+    color: #9ca3af;
+    font-size: 16px;
+}
+
+/* Dots Style */
+.breadcrumb-dots {
+    margin-bottom: 20px;
+}
+
+.breadcrumb-dots .breadcrumb-link::after,
+.breadcrumb-dots a::after {
+    content: '•';
+    margin-left: 8px;
+    color: #9ca3af;
+}
+
+/* Pills Style */
+.breadcrumb-pills {
+    gap: 4px;
+}
+
+.breadcrumb-pills .breadcrumb-link,
+.breadcrumb-pills a {
+    background: #f1f5f9;
+    padding: 6px 12px;
+    border-radius: 20px;
+    color: #64748b;
+}
+
+.breadcrumb-pills .breadcrumb-link:hover,
+.breadcrumb-pills a:hover {
+    background: #e2e8f0;
+    color: #475569;
+}
+
+.breadcrumb-pills .breadcrumb-current,
+.breadcrumb-pills span {
+    background: #3b82f6;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+.breadcrumb-pills .breadcrumb-link::after,
+.breadcrumb-pills a::after {
+    content: none;
+}
+
+.navigation-demo {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.navigation-demo button {
+    padding: 8px 16px;
+    background: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.2s;
+}
+
+.navigation-demo button:hover {
+    background: #2563eb;
+}
+
+@media (max-width: 768px) {
+    .breadcrumb {
+        flex-wrap: wrap;
+        gap: 4px;
+    }
+    
+    .breadcrumb-link::after {
+        margin-left: 6px;
+    }
+    
+    .navigation-demo {
+        flex-direction: column;
+    }
+    
+    .navigation-demo button {
+        width: 100%;
+    }
+}

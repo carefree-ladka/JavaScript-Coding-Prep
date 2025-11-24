@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App Component</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="todo-app">
+            <header class="todo-header">
+                <h1>Todo App</h1>
+                <div class="stats">
+                    <span id="totalTasks">0 tasks</span>
+                    <span id="completedTasks">0 completed</span>
+                </div>
+            </header>
+            
+            <form class="todo-form" id="todoForm">
+                <input 
+                    type="text" 
+                    id="todoInput" 
+                    placeholder="Add a new task..." 
+                    maxlength="100"
+                    required
+                >
+                <button type="submit" class="add-btn">Add</button>
+            </form>
+            
+            <div class="todo-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="active">Active</button>
+                <button class="filter-btn" data-filter="completed">Completed</button>
+            </div>
+            
+            <div class="todo-list-container">
+                <ul class="todo-list" id="todoList"></ul>
+                
+                <div class="empty-state" id="emptyState">
+                    <div class="empty-icon">📝</div>
+                    <h3>No tasks yet</h3>
+                    <p>Add a task above to get started!</p>
+                </div>
+            </div>
+            
+            <div class="todo-actions">
+                <button id="clearCompleted" class="action-btn">Clear Completed</button>
+                <button id="markAllComplete" class="action-btn">Mark All Complete</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

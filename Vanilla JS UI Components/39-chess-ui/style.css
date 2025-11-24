@@ -1,0 +1,366 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #f8fafc;
+    color: #334155;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.chess-game {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.game-header h1 {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.game-controls {
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-primary {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-primary:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.game-info {
+    padding: 20px 30px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.player-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.player {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.player-name {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.white-player .player-name {
+    color: #374151;
+}
+
+.black-player .player-name {
+    color: #1f2937;
+}
+
+.captured-pieces {
+    display: flex;
+    gap: 4px;
+    min-height: 30px;
+    flex-wrap: wrap;
+}
+
+.captured-piece {
+    font-size: 20px;
+    opacity: 0.7;
+}
+
+.game-status {
+    text-align: center;
+}
+
+.current-turn {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 5px;
+}
+
+.game-state {
+    font-size: 14px;
+    color: #6b7280;
+}
+
+.chess-board-container {
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+    background: #f8fafc;
+}
+
+.chess-board {
+    display: grid;
+    grid-template-columns: repeat(8, 60px);
+    grid-template-rows: repeat(8, 60px);
+    border: 3px solid #374151;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.square {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    user-select: none;
+}
+
+.square.light {
+    background: #f0d9b5;
+}
+
+.square.dark {
+    background: #b58863;
+}
+
+.square:hover {
+    opacity: 0.8;
+}
+
+.square.selected {
+    background: #f7dc6f !important;
+    box-shadow: inset 0 0 0 3px #f39c12;
+}
+
+.square.possible-move {
+    background: #a9dfbf !important;
+}
+
+.square.possible-move::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #27ae60;
+    border-radius: 50%;
+    opacity: 0.7;
+}
+
+.square.capture {
+    background: #f1948a !important;
+}
+
+.square.capture::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 3px solid #e74c3c;
+    border-radius: 50%;
+    opacity: 0.7;
+}
+
+.piece {
+    font-size: 36px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s;
+    z-index: 2;
+}
+
+.piece:hover {
+    transform: scale(1.1);
+}
+
+.piece.white {
+    color: #ffffff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.piece.black {
+    color: #2c3e50;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+}
+
+.rank-label,
+.file-label {
+    position: absolute;
+    font-size: 12px;
+    font-weight: 600;
+    color: #6b7280;
+    pointer-events: none;
+}
+
+.rank-label {
+    top: 2px;
+    left: 2px;
+}
+
+.file-label {
+    bottom: 2px;
+    right: 2px;
+}
+
+.square.light .rank-label,
+.square.light .file-label {
+    color: #8b4513;
+}
+
+.square.dark .rank-label,
+.square.dark .file-label {
+    color: #f0d9b5;
+}
+
+.move-history {
+    padding: 20px 30px;
+    background: #f8fafc;
+    border-top: 1px solid #e5e7eb;
+}
+
+.move-history h3 {
+    margin-bottom: 15px;
+    color: #1f2937;
+    font-size: 16px;
+}
+
+.moves-list {
+    max-height: 200px;
+    overflow-y: auto;
+    background: white;
+    border-radius: 6px;
+    padding: 15px;
+    border: 1px solid #e5e7eb;
+}
+
+.move-pair {
+    padding: 4px 0;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    color: #374151;
+}
+
+.move-pair:nth-child(even) {
+    background: #f8fafc;
+    margin: 0 -15px;
+    padding: 4px 15px;
+}
+
+/* Scrollbar */
+.moves-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.moves-list::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+.moves-list::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 3px;
+}
+
+.moves-list::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .game-header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .game-header h1 {
+        font-size: 20px;
+    }
+    
+    .player-info {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .chess-board {
+        grid-template-columns: repeat(8, 45px);
+        grid-template-rows: repeat(8, 45px);
+    }
+    
+    .piece {
+        font-size: 28px;
+    }
+    
+    .game-info,
+    .chess-board-container,
+    .move-history {
+        padding: 15px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .chess-board {
+        grid-template-columns: repeat(8, 35px);
+        grid-template-rows: repeat(8, 35px);
+    }
+    
+    .piece {
+        font-size: 22px;
+    }
+    
+    .game-controls {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .btn {
+        width: 100%;
+    }
+}

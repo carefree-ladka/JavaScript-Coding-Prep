@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive User Cards</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>User Cards</h1>
+            <div class="controls">
+                <div class="view-toggle">
+                    <button class="view-btn active" data-view="grid">Grid</button>
+                    <button class="view-btn" data-view="list">List</button>
+                </div>
+                <div class="filter-controls">
+                    <select id="sortBy">
+                        <option value="name">Sort by Name</option>
+                        <option value="role">Sort by Role</option>
+                        <option value="status">Sort by Status</option>
+                    </select>
+                    <input type="text" id="searchInput" placeholder="Search users...">
+                </div>
+            </div>
+        </header>
+        
+        <div class="user-cards-container" id="userCardsContainer">
+            <!-- Cards will be dynamically generated -->
+        </div>
+        
+        <div class="load-more">
+            <button id="loadMore" class="btn btn-primary">Load More</button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

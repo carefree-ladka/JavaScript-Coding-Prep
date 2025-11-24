@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Visualization Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard">
+        <header class="dashboard-header">
+            <h1>Analytics Dashboard</h1>
+            <div class="header-controls">
+                <select id="timeRange">
+                    <option value="7">Last 7 days</option>
+                    <option value="30">Last 30 days</option>
+                    <option value="90">Last 90 days</option>
+                </select>
+                <button id="refreshBtn">🔄 Refresh</button>
+            </div>
+        </header>
+        
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon">👥</div>
+                <div class="stat-content">
+                    <h3 id="totalUsers">0</h3>
+                    <p>Total Users</p>
+                    <span class="stat-change positive" id="usersChange">+0%</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">💰</div>
+                <div class="stat-content">
+                    <h3 id="revenue">$0</h3>
+                    <p>Revenue</p>
+                    <span class="stat-change positive" id="revenueChange">+0%</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">📊</div>
+                <div class="stat-content">
+                    <h3 id="orders">0</h3>
+                    <p>Orders</p>
+                    <span class="stat-change negative" id="ordersChange">-0%</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">⭐</div>
+                <div class="stat-content">
+                    <h3 id="rating">0.0</h3>
+                    <p>Avg Rating</p>
+                    <span class="stat-change positive" id="ratingChange">+0%</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="charts-grid">
+            <div class="chart-card">
+                <h3>Sales Trend</h3>
+                <canvas id="salesChart" width="400" height="200"></canvas>
+            </div>
+            <div class="chart-card">
+                <h3>User Activity</h3>
+                <div class="activity-chart" id="activityChart"></div>
+            </div>
+        </div>
+        
+        <div class="data-table-card">
+            <h3>Recent Transactions</h3>
+            <div class="table-wrapper">
+                <table id="transactionsTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Customer</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

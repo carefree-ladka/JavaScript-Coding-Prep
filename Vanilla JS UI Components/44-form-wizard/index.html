@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Step Form Wizard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-wizard">
+            <div class="wizard-header">
+                <h1>Account Registration</h1>
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+            </div>
+            
+            <div class="wizard-steps">
+                <div class="step active" data-step="1">
+                    <div class="step-number">1</div>
+                    <span>Personal</span>
+                </div>
+                <div class="step" data-step="2">
+                    <div class="step-number">2</div>
+                    <span>Account</span>
+                </div>
+                <div class="step" data-step="3">
+                    <div class="step-number">3</div>
+                    <span>Preferences</span>
+                </div>
+                <div class="step" data-step="4">
+                    <div class="step-number">4</div>
+                    <span>Review</span>
+                </div>
+            </div>
+            
+            <form id="wizardForm" class="wizard-form">
+                <!-- Step 1: Personal Information -->
+                <div class="form-step active" data-step="1">
+                    <h2>Personal Information</h2>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name *</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                            <span class="error-message"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name *</label>
+                            <input type="text" id="lastName" name="lastName" required>
+                            <span class="error-message"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                        <span class="error-message"></span>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="birthDate">Date of Birth</label>
+                            <input type="date" id="birthDate" name="birthDate">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Step 2: Account Details -->
+                <div class="form-step" data-step="2">
+                    <h2>Account Details</h2>
+                    <div class="form-group">
+                        <label for="username">Username *</label>
+                        <input type="text" id="username" name="username" required>
+                        <span class="error-message"></span>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="password">Password *</label>
+                            <input type="password" id="password" name="password" required>
+                            <span class="error-message"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmPassword">Confirm Password *</label>
+                            <input type="password" id="confirmPassword" name="confirmPassword" required>
+                            <span class="error-message"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="accountType">Account Type *</label>
+                        <select id="accountType" name="accountType" required>
+                            <option value="">Select account type</option>
+                            <option value="personal">Personal</option>
+                            <option value="business">Business</option>
+                            <option value="enterprise">Enterprise</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <!-- Step 3: Preferences -->
+                <div class="form-step" data-step="3">
+                    <h2>Preferences</h2>
+                    <div class="form-group">
+                        <label>Interests (select all that apply)</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="interests" value="technology">
+                                <span class="checkmark"></span>
+                                Technology
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="interests" value="sports">
+                                <span class="checkmark"></span>
+                                Sports
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="interests" value="music">
+                                <span class="checkmark"></span>
+                                Music
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="interests" value="travel">
+                                <span class="checkmark"></span>
+                                Travel
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Communication Preferences</label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="communication" value="email" checked>
+                                <span class="radio-mark"></span>
+                                Email only
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="communication" value="sms">
+                                <span class="radio-mark"></span>
+                                SMS only
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="communication" value="both">
+                                <span class="radio-mark"></span>
+                                Both Email & SMS
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="newsletter" value="yes">
+                            <span class="checkmark"></span>
+                            Subscribe to newsletter
+                        </label>
+                    </div>
+                </div>
+                
+                <!-- Step 4: Review -->
+                <div class="form-step" data-step="4">
+                    <h2>Review Your Information</h2>
+                    <div class="review-section">
+                        <h3>Personal Information</h3>
+                        <div class="review-item">
+                            <span class="label">Name:</span>
+                            <span class="value" id="reviewName"></span>
+                        </div>
+                        <div class="review-item">
+                            <span class="label">Email:</span>
+                            <span class="value" id="reviewEmail"></span>
+                        </div>
+                        <div class="review-item">
+                            <span class="label">Phone:</span>
+                            <span class="value" id="reviewPhone"></span>
+                        </div>
+                    </div>
+                    <div class="review-section">
+                        <h3>Account Details</h3>
+                        <div class="review-item">
+                            <span class="label">Username:</span>
+                            <span class="value" id="reviewUsername"></span>
+                        </div>
+                        <div class="review-item">
+                            <span class="label">Account Type:</span>
+                            <span class="value" id="reviewAccountType"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="terms" required>
+                            <span class="checkmark"></span>
+                            I agree to the Terms of Service and Privacy Policy *
+                        </label>
+                    </div>
+                </div>
+            </form>
+            
+            <div class="wizard-actions">
+                <button type="button" id="prevBtn" class="btn btn-secondary">Previous</button>
+                <button type="button" id="nextBtn" class="btn btn-primary">Next</button>
+                <button type="submit" form="wizardForm" id="submitBtn" class="btn btn-success" style="display: none;">Submit</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

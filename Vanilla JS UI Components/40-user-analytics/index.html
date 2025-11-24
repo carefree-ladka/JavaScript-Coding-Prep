@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Analytics Component</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="analytics-dashboard">
+            <header class="dashboard-header">
+                <h1>User Analytics Dashboard</h1>
+                <div class="status-indicator">
+                    <span class="status-dot" id="statusDot"></span>
+                    <span id="statusText">Tracking Active</span>
+                </div>
+            </header>
+            
+            <div class="analytics-grid">
+                <div class="analytics-card">
+                    <h3>Session Time</h3>
+                    <div class="metric-value" id="sessionTime">00:00:00</div>
+                    <div class="metric-label">Current session duration</div>
+                </div>
+                
+                <div class="analytics-card">
+                    <h3>Active Time</h3>
+                    <div class="metric-value" id="activeTime">00:00:00</div>
+                    <div class="metric-label">Time spent actively on page</div>
+                </div>
+                
+                <div class="analytics-card">
+                    <h3>Tab Switches</h3>
+                    <div class="metric-value" id="tabSwitches">0</div>
+                    <div class="metric-label">Times user switched tabs</div>
+                </div>
+                
+                <div class="analytics-card">
+                    <h3>Page Visibility</h3>
+                    <div class="metric-value" id="visibilityStatus">Visible</div>
+                    <div class="metric-label">Current page visibility state</div>
+                </div>
+                
+                <div class="analytics-card">
+                    <h3>Idle Time</h3>
+                    <div class="metric-value" id="idleTime">00:00:00</div>
+                    <div class="metric-label">Time spent idle (no interaction)</div>
+                </div>
+                
+                <div class="analytics-card">
+                    <h3>Interactions</h3>
+                    <div class="metric-value" id="interactions">0</div>
+                    <div class="metric-label">Mouse clicks and key presses</div>
+                </div>
+            </div>
+            
+            <div class="analytics-details">
+                <div class="detail-section">
+                    <h3>Activity Timeline</h3>
+                    <div class="timeline" id="activityTimeline"></div>
+                </div>
+                
+                <div class="detail-section">
+                    <h3>Analytics Data</h3>
+                    <div class="data-display">
+                        <pre id="analyticsData">{}</pre>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="controls">
+                <button id="sendAnalytics" class="btn btn-primary">Send Analytics</button>
+                <button id="clearData" class="btn btn-secondary">Clear Data</button>
+                <button id="exportData" class="btn btn-secondary">Export Data</button>
+            </div>
+            
+            <div class="demo-content">
+                <h3>Demo Content</h3>
+                <p>This is demo content to interact with. Try clicking, typing, and switching tabs to see analytics in action.</p>
+                <input type="text" placeholder="Type here to generate interactions...">
+                <button class="demo-btn">Click me!</button>
+                <textarea placeholder="More interaction area..." rows="4"></textarea>
+                <div class="demo-links">
+                    <a href="#" onclick="return false;">Demo Link 1</a>
+                    <a href="#" onclick="return false;">Demo Link 2</a>
+                    <a href="#" onclick="return false;">Demo Link 3</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

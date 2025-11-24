@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breadcrumb Navigation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Breadcrumb Navigation</h1>
+        
+        <div class="demo-section">
+            <h3>Dynamic Breadcrumbs</h3>
+            <nav class="breadcrumb" id="breadcrumb"></nav>
+            
+            <div class="navigation-demo">
+                <button onclick="breadcrumb.navigate('home')">Home</button>
+                <button onclick="breadcrumb.navigate('products')">Products</button>
+                <button onclick="breadcrumb.navigate('electronics')">Electronics</button>
+                <button onclick="breadcrumb.navigate('laptops')">Laptops</button>
+                <button onclick="breadcrumb.navigate('gaming-laptops')">Gaming Laptops</button>
+            </div>
+        </div>
+        
+        <div class="demo-section">
+            <h3>Different Styles</h3>
+            <nav class="breadcrumb breadcrumb-arrows">
+                <a href="#">Home</a>
+                <a href="#">Category</a>
+                <a href="#">Subcategory</a>
+                <span>Current Page</span>
+            </nav>
+            
+            <nav class="breadcrumb breadcrumb-dots">
+                <a href="#">Dashboard</a>
+                <a href="#">Users</a>
+                <a href="#">Profile</a>
+                <span>Settings</span>
+            </nav>
+            
+            <nav class="breadcrumb breadcrumb-pills">
+                <a href="#">Store</a>
+                <a href="#">Electronics</a>
+                <a href="#">Computers</a>
+                <span>Laptops</span>
+            </nav>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

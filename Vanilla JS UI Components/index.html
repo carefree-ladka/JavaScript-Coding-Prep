@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vanilla JS UI Components - 42 Essential Components</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #334155;
+        }
+
+        .header {
+            text-align: center;
+            padding: 40px 20px;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px 40px;
+        }
+
+        .search-filter {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+
+        .filters {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 8px 16px;
+            border: 1px solid #d1d5db;
+            background: white;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 14px;
+        }
+
+        .filter-btn.active {
+            background: #3b82f6;
+            color: white;
+            border-color: #3b82f6;
+        }
+
+        .components-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 20px;
+        }
+
+        .component-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .component-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 12px;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 4px;
+        }
+
+        .card-number {
+            background: #f1f5f9;
+            color: #64748b;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .card-description {
+            color: #64748b;
+            font-size: 14px;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+
+        .card-tags {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+
+        .tag {
+            background: #f1f5f9;
+            color: #475569;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 500;
+        }
+
+        .tag.beginner { background: #dcfce7; color: #166534; }
+        .tag.intermediate { background: #fef3c7; color: #92400e; }
+        .tag.advanced { background: #fee2e2; color: #991b1b; }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 15px;
+            border-top: 1px solid #f1f5f9;
+        }
+
+        .frequency {
+            font-size: 12px;
+            color: #64748b;
+        }
+
+        .arrow {
+            color: #3b82f6;
+            font-size: 18px;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 60px 20px;
+            color: #64748b;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 { font-size: 2rem; }
+            .header p { font-size: 1rem; }
+            .stats { flex-direction: column; gap: 15px; }
+            .components-grid { grid-template-columns: 1fr; }
+            .filters { justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Vanilla JS UI Components</h1>
+        <p>53 Essential UI Components for Frontend Interviews</p>
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-number">53</div>
+                <div class="stat-label">Components</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">20</div>
+                <div class="stat-label">Beginner</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">18</div>
+                <div class="stat-label">Intermediate</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">15</div>
+                <div class="stat-label">Advanced</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="search-filter">
+            <input type="text" class="search-input" placeholder="Search components..." id="searchInput">
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="beginner">Beginner</button>
+                <button class="filter-btn" data-filter="intermediate">Intermediate</button>
+                <button class="filter-btn" data-filter="advanced">Advanced</button>
+                <button class="filter-btn" data-filter="most-asked">Most Asked</button>
+            </div>
+        </div>
+
+        <div class="components-grid" id="componentsGrid">
+            <!-- Components will be populated by JavaScript -->
+        </div>
+
+        <div class="no-results" id="noResults" style="display: none;">
+            <h3>No components found</h3>
+            <p>Try adjusting your search or filter criteria</p>
+        </div>
+    </div>
+
+    <script>
+        const components = [
+            { id: 1, name: "Infinite Scroll", description: "Load data on scroll with Intersection Observer", difficulty: "intermediate", frequency: 95, tags: ["scroll", "performance", "api"] },
+            { id: 2, name: "Pagination", description: "Page navigation with controls and info", difficulty: "intermediate", frequency: 85, tags: ["navigation", "data"] },
+            { id: 3, name: "Table Sorting", description: "Multi-column sorting with indicators", difficulty: "intermediate", frequency: 85, tags: ["table", "sort", "data"] },
+            { id: 4, name: "Table Filtering", description: "Search and filter with highlighting", difficulty: "intermediate", frequency: 80, tags: ["table", "search", "filter"] },
+            { id: 5, name: "Dynamic Table", description: "Schema-based table rendering", difficulty: "intermediate", frequency: 75, tags: ["table", "dynamic", "schema"] },
+            { id: 6, name: "Autocomplete", description: "Debounced search with keyboard navigation", difficulty: "intermediate", frequency: 90, tags: ["search", "debounce", "keyboard"] },
+            { id: 7, name: "Modal", description: "Overlay with focus management and accessibility", difficulty: "beginner", frequency: 80, tags: ["overlay", "focus", "a11y"] },
+            { id: 8, name: "Dropdown", description: "Click outside and keyboard navigation", difficulty: "beginner", frequency: 75, tags: ["menu", "keyboard", "click-outside"] },
+            { id: 9, name: "Tabs", description: "Content switching with keyboard support", difficulty: "beginner", frequency: 70, tags: ["navigation", "content", "keyboard"] },
+            { id: 10, name: "Accordion", description: "Collapsible panels with smooth animations", difficulty: "beginner", frequency: 65, tags: ["collapse", "animation"] },
+            { id: 11, name: "Image Carousel", description: "Auto-play with infinite loop and controls", difficulty: "intermediate", frequency: 70, tags: ["images", "animation", "controls"] },
+            { id: 12, name: "Virtualized List", description: "Handle 10k+ items efficiently", difficulty: "advanced", frequency: 75, tags: ["performance", "virtualization", "scroll"] },
+            { id: 13, name: "Editable List", description: "Todo app with local storage persistence", difficulty: "intermediate", frequency: 60, tags: ["crud", "storage", "edit"] },
+            { id: 14, name: "Drag & Drop", description: "Reorderable list with touch support", difficulty: "advanced", frequency: 70, tags: ["drag", "touch", "reorder"] },
+            { id: 15, name: "Rating", description: "Star rating with hover and click states", difficulty: "beginner", frequency: 55, tags: ["rating", "stars", "interaction"] },
+            { id: 16, name: "Stepper", description: "Multi-step wizard with validation", difficulty: "intermediate", frequency: 60, tags: ["wizard", "steps", "validation"] },
+            { id: 17, name: "Countdown Timer", description: "Accurate timer with start/pause/reset", difficulty: "beginner", frequency: 50, tags: ["timer", "countdown", "controls"] },
+            { id: 18, name: "File Upload", description: "Drag-drop with progress and preview", difficulty: "intermediate", frequency: 65, tags: ["upload", "drag-drop", "progress"] },
+            { id: 19, name: "Debounced Search", description: "Search with API cancellation and loading", difficulty: "intermediate", frequency: 85, tags: ["search", "debounce", "api"] },
+            { id: 20, name: "Lazy Loading", description: "Image lazy loading with Intersection Observer", difficulty: "intermediate", frequency: 70, tags: ["images", "performance", "lazy"] },
+            { id: 21, name: "Nested Comments", description: "VSCode-style collapsible comment threads", difficulty: "beginner", frequency: 45, tags: ["comments", "nested", "collapse"] },
+            { id: 22, name: "File Explorer", description: "VSCode file tree with expand/collapse", difficulty: "beginner", frequency: 50, tags: ["tree", "files", "expand"] },
+            { id: 23, name: "Traffic Lights", description: "Traffic lights with configurable timers", difficulty: "beginner", frequency: 40, tags: ["animation", "timer", "state"] },
+            { id: 24, name: "Holy Grail Layout", description: "Classic CSS layout with flexbox", difficulty: "beginner", frequency: 35, tags: ["layout", "css", "flexbox"] },
+            { id: 25, name: "Masonry Layout", description: "Pinterest-style responsive grid", difficulty: "beginner", frequency: 45, tags: ["layout", "grid", "responsive"] },
+            { id: 26, name: "Teams UI", description: "Microsoft Teams clone with chat", difficulty: "intermediate", frequency: 55, tags: ["chat", "ui-clone", "real-time"] },
+            { id: 27, name: "Outlook UI", description: "Microsoft Outlook email client interface", difficulty: "intermediate", frequency: 50, tags: ["email", "ui-clone", "layout"] },
+            { id: 28, name: "Google Calendar", description: "Calendar with events and navigation", difficulty: "advanced", frequency: 60, tags: ["calendar", "events", "date"] },
+            { id: 29, name: "Tic Tac Toe", description: "Game with AI opponent and win detection", difficulty: "beginner", frequency: 45, tags: ["game", "ai", "logic"] },
+            { id: 30, name: "Poll Voting App", description: "Real-time poll with animations", difficulty: "beginner", frequency: 40, tags: ["poll", "voting", "animation"] },
+            { id: 31, name: "Theme Builder", description: "Light/Dark/System theme with JSON config", difficulty: "beginner", frequency: 50, tags: ["theme", "dark-mode", "config"] },
+            { id: 32, name: "Spreadsheet", description: "Excel-like with formulas and calculations", difficulty: "advanced", frequency: 65, tags: ["spreadsheet", "formulas", "calculations"] },
+            { id: 33, name: "Notification System", description: "Toast notifications with queueing", difficulty: "beginner", frequency: 60, tags: ["notifications", "toast", "queue"] },
+            { id: 34, name: "Form Builder", description: "Dynamic forms from JSON schema", difficulty: "advanced", frequency: 55, tags: ["forms", "dynamic", "schema"] },
+            { id: 35, name: "Rich Text Editor", description: "WYSIWYG editor with undo/redo", difficulty: "advanced", frequency: 60, tags: ["editor", "wysiwyg", "undo"] },
+            { id: 36, name: "Kanban Board", description: "Trello-style with drag-and-drop", difficulty: "advanced", frequency: 65, tags: ["kanban", "drag-drop", "project"] },
+            { id: 37, name: "Progress Bar", description: "Animated progress with file upload demo", difficulty: "beginner", frequency: 55, tags: ["progress", "animation", "upload"] },
+            { id: 38, name: "Todo App", description: "Full-featured todo with persistence", difficulty: "intermediate", frequency: 70, tags: ["todo", "crud", "storage"] },
+            { id: 39, name: "Chess UI", description: "Interactive chess board with move validation", difficulty: "advanced", frequency: 70, tags: ["game", "chess", "validation"] },
+            { id: 40, name: "User Analytics", description: "Time tracking with sendBeacon API", difficulty: "intermediate", frequency: 88, tags: ["analytics", "tracking", "beacon"] },
+            { id: 41, name: "User Cards", description: "Responsive user cards with grid/list view", difficulty: "beginner", frequency: 86, tags: ["cards", "responsive", "users"] },
+            { id: 42, name: "Table CRUD", description: "Full CRUD table with search, filter, sort", difficulty: "intermediate", frequency: 92, tags: ["crud", "table", "search"] },
+            { id: 43, name: "Image Gallery", description: "Lightbox with keyboard navigation and thumbnails", difficulty: "advanced", frequency: 95, tags: ["images", "lightbox", "gallery"] },
+            { id: 44, name: "Form Wizard", description: "Multi-step form with validation and progress", difficulty: "intermediate", frequency: 90, tags: ["forms", "wizard", "validation"] },
+            { id: 45, name: "Shopping Cart", description: "Add/remove items with calculations and persistence", difficulty: "intermediate", frequency: 88, tags: ["cart", "ecommerce", "storage"] },
+            { id: 46, name: "Sidebar Nav", description: "Collapsible sidebar with nested menus", difficulty: "intermediate", frequency: 85, tags: ["navigation", "sidebar", "responsive"] },
+            { id: 47, name: "Dashboard", description: "Data visualization with charts and real-time updates", difficulty: "advanced", frequency: 85, tags: ["dashboard", "charts", "data"] },
+            { id: 48, name: "Breadcrumbs", description: "Dynamic breadcrumb navigation with routing", difficulty: "beginner", frequency: 75, tags: ["navigation", "breadcrumbs", "routing"] },
+            { id: 49, name: "Tag Input", description: "Add/remove tags with autocomplete suggestions", difficulty: "intermediate", frequency: 80, tags: ["tags", "input", "autocomplete"] },
+            { id: 50, name: "Color Picker", description: "HSL color picker with multiple format outputs", difficulty: "intermediate", frequency: 85, tags: ["color", "picker", "canvas"] },
+            { id: 51, name: "Date Picker", description: "Calendar with single and range date selection", difficulty: "intermediate", frequency: 88, tags: ["date", "calendar", "picker"] },
+            { id: 52, name: "Redux Counter", description: "Custom Redux implementation with thunk middleware", difficulty: "advanced", frequency: 92, tags: ["state", "redux", "thunk"] },
+            { id: 53, name: "Batch Progress", description: "N progress bars in K batches - Uber interview question", difficulty: "advanced", frequency: 95, tags: ["progress", "queue", "batch"] }
+        ];
+
+        let filteredComponents = [...components];
+
+        function renderComponents() {
+            const grid = document.getElementById('componentsGrid');
+            const noResults = document.getElementById('noResults');
+
+            if (filteredComponents.length === 0) {
+                grid.style.display = 'none';
+                noResults.style.display = 'block';
+                return;
+            }
+
+            grid.style.display = 'grid';
+            noResults.style.display = 'none';
+
+            grid.innerHTML = filteredComponents.map(component => `
+                <a href="${String(component.id).padStart(2, '0')}-${component.name.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')}/index.html" class="component-card">
+                    <div class="card-header">
+                        <div>
+                            <div class="card-title">${component.name}</div>
+                        </div>
+                        <div class="card-number">#${String(component.id).padStart(2, '0')}</div>
+                    </div>
+                    <div class="card-description">${component.description}</div>
+                    <div class="card-tags">
+                        <span class="tag ${component.difficulty}">${component.difficulty}</span>
+                        ${component.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+                    </div>
+                    <div class="card-footer">
+                        <div class="frequency">${component.frequency}% frequency</div>
+                        <div class="arrow">→</div>
+                    </div>
+                </a>
+            `).join('');
+        }
+
+        function filterComponents() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const activeFilter = document.querySelector('.filter-btn.active').dataset.filter;
+
+            filteredComponents = components.filter(component => {
+                const matchesSearch = component.name.toLowerCase().includes(searchTerm) ||
+                                    component.description.toLowerCase().includes(searchTerm) ||
+                                    component.tags.some(tag => tag.toLowerCase().includes(searchTerm));
+
+                const matchesFilter = activeFilter === 'all' ||
+                                    component.difficulty === activeFilter ||
+                                    (activeFilter === 'most-asked' && component.frequency >= 80);
+
+                return matchesSearch && matchesFilter;
+            });
+
+            // Sort by frequency for most-asked filter
+            if (activeFilter === 'most-asked') {
+                filteredComponents.sort((a, b) => b.frequency - a.frequency);
+            } else {
+                filteredComponents.sort((a, b) => a.id - b.id);
+            }
+
+            renderComponents();
+        }
+
+        // Event listeners
+        document.getElementById('searchInput').addEventListener('input', filterComponents);
+
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                filterComponents();
+            });
+        });
+
+        // Initial render
+        renderComponents();
+    </script>
+</body>
+</html>

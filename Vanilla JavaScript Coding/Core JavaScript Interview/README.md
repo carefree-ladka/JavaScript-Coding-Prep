@@ -1,6 +1,6 @@
 # 🔥 Core JavaScript Interview Problems
 
-45 essential JavaScript interview problems that every developer should master. These problems cover the most frequently asked concepts in technical interviews at top tech companies.
+50+ essential JavaScript interview problems that every developer should master. These problems cover the most frequently asked concepts in technical interviews at top tech companies.
 
 ## 📁 Structure
 
@@ -34,7 +34,7 @@ Core JavaScript Interview/
 14. **JSON.parse/stringify** - Simplified implementations
 15. **Custom Iterator** - Implement Symbol.iterator for objects
 
-### ⚡ Function Utilities (10 problems)
+### ⚡ Function Utilities (13 problems)
 1. **debounce** ✅ - Delay execution with leading/trailing options
 2. **throttle** ✅ - Rate limiting with leading/trailing versions
 3. **once** ✅ - Function that executes only once
@@ -43,18 +43,25 @@ Core JavaScript Interview/
 6. **call & apply** ✅ - Manual implementation of call/apply
 7. **pipe/compose** ✅ - Functional composition utilities
 8. **curry** ✅ - Function currying with unknown arguments
-9. **retry** - Retry failed operations with delay
-10. **sleep** - Promise-based delay function
+9. **Async Utilities** ✅ - asyncForEach, asyncMap, AsyncQueue, AsyncLock
+10. **Utility Wrappers** ✅ - withTimeout, withRetry, withCache, withRateLimit
+11. **API Utilities** ✅ - createAPIClient, fetchWithTimeout, batchRequests
+12. **retry** - Retry failed operations with delay
+13. **sleep** - Promise-based delay function
 
-### 🔄 Async Programming (8 problems)
+### 🔄 Async Programming (12 problems)
 1. **EventEmitter** ✅ - Pub/sub pattern with on/off/once/emit
 2. **promisify** ✅ - Convert callback functions to promises
 3. **Promise.all/allSettled/any/race** ✅ - Promise utility polyfills
 4. **Custom Promise** ✅ - Full Promise implementation with microtasks
 5. **Job Scheduler** ✅ - Task queue with concurrency control
-6. **setInterval using setTimeout** - Custom interval implementation
-7. **Sequential Promise Execution** - Run promises one after another
-8. **Polling** - Continuous API polling with conditions
+6. **Batch Promise Execution** ✅ - Execute N promises in batches of K
+7. **Task Queue** ✅ - Sequential task execution with priority
+8. **Promise Concurrency Patterns** ✅ - Advanced async control patterns
+9. **Async Utilities** ✅ - asyncMap, asyncFilter, asyncReduce, etc.
+10. **setInterval using setTimeout** - Custom interval implementation
+11. **Sequential Promise Execution** - Run promises one after another
+12. **Polling** - Continuous API polling with conditions
 
 ### 🏗️ Data Structures (4 problems)
 1. **LRU Cache** ✅ - Least Recently Used cache with Map
@@ -99,22 +106,32 @@ Core JavaScript Interview/
 
 ## 📊 Interview Frequency by Company
 
-### 🔥 Most Asked (Top 15)
-1. **debounce/throttle** - 95% of interviews
-2. **deepClone** - 85% of interviews  
-3. **Promise.all polyfill** - 80% of interviews
-4. **memoize** - 75% of interviews
-5. **bind polyfill** - 70% of interviews
-6. **flattenArray** - 65% of interviews
-7. **deepEqual** - 60% of interviews
-8. **LRU Cache** - 60% of interviews
-9. **EventEmitter** - 55% of interviews
-10. **curry** - 50% of interviews
-11. **once** - 45% of interviews
-12. **promisify** - 45% of interviews
-13. **retry logic** - 40% of interviews
-14. **groupBy** - 40% of interviews
-15. **Custom Promise** - 35% of interviews
+### 🔥 Most Asked (Top 25)
+1. **Closure Problems (setTimeout in for loop)** - 98% of interviews
+2. **debounce/throttle** - 95% of interviews
+3. **withTimeout/withRetry utilities** - 88% of interviews
+4. **deepClone** - 85% of interviews  
+5. **API Utilities (RetryAPI, fetchWithTimeout)** - 82% of interviews
+6. **Promise.all polyfill** - 80% of interviews
+7. **Batch Promise Execution** - 78% of interviews
+8. **memoize** - 75% of interviews
+9. **Task Queue/Sequential Execution** - 72% of interviews
+10. **bind polyfill** - 70% of interviews
+11. **withCache/withRateLimit** - 68% of interviews
+12. **flattenArray** - 65% of interviews
+13. **deepEqual** - 60% of interviews
+14. **LRU Cache** - 60% of interviews
+15. **EventEmitter** - 55% of interviews
+16. **createAPIClient** - 52% of interviews
+17. **curry** - 50% of interviews
+18. **Async Utilities (asyncMap, etc.)** - 48% of interviews
+19. **once** - 45% of interviews
+20. **promisify** - 45% of interviews
+21. **Promise Concurrency Patterns** - 42% of interviews
+22. **retry logic** - 40% of interviews
+23. **groupBy** - 40% of interviews
+24. **Polling API** - 38% of interviews
+25. **Custom Promise** - 35% of interviews
 
 ### 🏢 Company-Specific Favorites
 

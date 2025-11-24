@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery with Lightbox</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="gallery-header">
+            <h1>Image Gallery</h1>
+            <div class="gallery-controls">
+                <select id="categoryFilter">
+                    <option value="all">All Categories</option>
+                    <option value="nature">Nature</option>
+                    <option value="city">City</option>
+                    <option value="people">People</option>
+                </select>
+                <div class="view-toggle">
+                    <button class="view-btn active" data-view="grid">Grid</button>
+                    <button class="view-btn" data-view="masonry">Masonry</button>
+                </div>
+            </div>
+        </header>
+        
+        <div class="gallery-grid" id="galleryGrid">
+            <!-- Images will be populated by JavaScript -->
+        </div>
+    </div>
+    
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close">&times;</button>
+            <button class="lightbox-prev">‹</button>
+            <button class="lightbox-next">›</button>
+            
+            <div class="lightbox-image-container">
+                <img id="lightboxImage" src="" alt="">
+                <div class="image-loader"></div>
+            </div>
+            
+            <div class="lightbox-info">
+                <h3 id="imageTitle"></h3>
+                <p id="imageDescription"></p>
+                <div class="image-meta">
+                    <span id="imageCounter"></span>
+                    <span id="imageCategory"></span>
+                </div>
+            </div>
+            
+            <div class="lightbox-thumbnails" id="thumbnails">
+                <!-- Thumbnails will be populated -->
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar Navigation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-layout">
+        <nav class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h2>Dashboard</h2>
+                <button class="toggle-btn" id="toggleBtn">☰</button>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#" class="nav-link active"><span class="icon">🏠</span>Home</a></li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link"><span class="icon">📊</span>Analytics<span class="arrow">▼</span></a>
+                    <ul class="submenu">
+                        <li><a href="#">Reports</a></li>
+                        <li><a href="#">Charts</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" class="nav-link"><span class="icon">👥</span>Users</a></li>
+                <li><a href="#" class="nav-link"><span class="icon">⚙️</span>Settings</a></li>
+            </ul>
+        </nav>
+        <main class="main-content">
+            <header class="top-bar">
+                <button class="mobile-toggle" id="mobileToggle">☰</button>
+                <h1>Welcome to Dashboard</h1>
+            </header>
+            <div class="content">
+                <p>Main content area. Sidebar is responsive and collapsible.</p>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

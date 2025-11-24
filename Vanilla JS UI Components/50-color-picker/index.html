@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Picker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Color Picker</h1>
+        <div class="color-picker">
+            <div class="color-display" id="colorDisplay"></div>
+            <div class="color-controls">
+                <canvas id="colorCanvas" width="300" height="200"></canvas>
+                <div class="sliders">
+                    <div class="slider-group">
+                        <label>Hue</label>
+                        <input type="range" id="hueSlider" min="0" max="360" value="0">
+                    </div>
+                    <div class="slider-group">
+                        <label>Saturation</label>
+                        <input type="range" id="satSlider" min="0" max="100" value="100">
+                    </div>
+                    <div class="slider-group">
+                        <label>Lightness</label>
+                        <input type="range" id="lightSlider" min="0" max="100" value="50">
+                    </div>
+                </div>
+                <div class="color-inputs">
+                    <input type="text" id="hexInput" placeholder="#000000">
+                    <input type="text" id="rgbInput" placeholder="rgb(0,0,0)">
+                    <input type="text" id="hslInput" placeholder="hsl(0,0%,0%)">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

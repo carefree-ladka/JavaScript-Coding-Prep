@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table CRUD Operations</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="table-container">
+            <header class="table-header">
+                <h1>Employee Management</h1>
+                <button id="addBtn" class="btn btn-primary">Add Employee</button>
+            </header>
+            
+            <div class="table-controls">
+                <div class="search-filter">
+                    <input type="text" id="searchInput" placeholder="Search employees...">
+                    <select id="departmentFilter">
+                        <option value="">All Departments</option>
+                        <option value="Engineering">Engineering</option>
+                        <option value="Marketing">Marketing</option>
+                        <option value="Sales">Sales</option>
+                        <option value="HR">HR</option>
+                        <option value="Finance">Finance</option>
+                    </select>
+                    <select id="statusFilter">
+                        <option value="">All Status</option>
+                        <option value="Active">Active</option>
+                        <option value="Inactive">Inactive</option>
+                    </select>
+                </div>
+                <div class="table-actions">
+                    <button id="exportBtn" class="btn btn-secondary">Export CSV</button>
+                    <button id="deleteSelectedBtn" class="btn btn-danger">Delete Selected</button>
+                </div>
+            </div>
+            
+            <div class="table-wrapper">
+                <table id="employeeTable" class="data-table">
+                    <thead>
+                        <tr>
+                            <th><input type="checkbox" id="selectAll"></th>
+                            <th class="sortable" data-column="id">ID <span class="sort-icon">↕</span></th>
+                            <th class="sortable" data-column="name">Name <span class="sort-icon">↕</span></th>
+                            <th class="sortable" data-column="email">Email <span class="sort-icon">↕</span></th>
+                            <th class="sortable" data-column="department">Department <span class="sort-icon">↕</span></th>
+                            <th class="sortable" data-column="position">Position <span class="sort-icon">↕</span></th>
+                            <th class="sortable" data-column="salary">Salary <span class="sort-icon">↕</span></th>
+                            <th class="sortable" data-column="status">Status <span class="sort-icon">↕</span></th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                        <!-- Data will be populated here -->
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="table-footer">
+                <div class="table-info">
+                    <span id="tableInfo">Showing 0 of 0 employees</span>
+                </div>
+                <div class="pagination">
+                    <button id="prevBtn" class="btn btn-outline">Previous</button>
+                    <span id="pageInfo">Page 1 of 1</span>
+                    <button id="nextBtn" class="btn btn-outline">Next</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal for Add/Edit -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Add Employee</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <form id="employeeForm" class="modal-body">
+                <div class="form-group">
+                    <label for="name">Name *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="department">Department *</label>
+                    <select id="department" name="department" required>
+                        <option value="">Select Department</option>
+                        <option value="Engineering">Engineering</option>
+                        <option value="Marketing">Marketing</option>
+                        <option value="Sales">Sales</option>
+                        <option value="HR">HR</option>
+                        <option value="Finance">Finance</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="position">Position *</label>
+                    <input type="text" id="position" name="position" required>
+                </div>
+                <div class="form-group">
+                    <label for="salary">Salary *</label>
+                    <input type="number" id="salary" name="salary" min="0" required>
+                </div>
+                <div class="form-group">
+                    <label for="status">Status *</label>
+                    <select id="status" name="status" required>
+                        <option value="Active">Active</option>
+                        <option value="Inactive">Inactive</option>
+                    </select>
+                </div>
+            </form>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="cancelBtn">Cancel</button>
+                <button type="submit" form="employeeForm" class="btn btn-primary" id="saveBtn">Save</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

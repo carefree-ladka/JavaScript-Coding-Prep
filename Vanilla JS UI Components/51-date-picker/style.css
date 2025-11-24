@@ -1,0 +1,237 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #f8fafc;
+    color: #334155;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #1e293b;
+}
+
+.demo-section {
+    background: white;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.demo-section h3 {
+    margin-bottom: 20px;
+    color: #1e293b;
+}
+
+.date-picker {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+}
+
+.date-input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    background: white;
+    transition: border-color 0.2s;
+}
+
+.date-input:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.calendar-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.2s ease;
+    margin-top: 4px;
+}
+
+.calendar-dropdown.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.nav-btn {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 4px;
+    color: #6b7280;
+    transition: all 0.2s;
+}
+
+.nav-btn:hover {
+    background: #f3f4f6;
+    color: #374151;
+}
+
+.month-year {
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.calendar-weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1px;
+    background: #f1f5f9;
+    padding: 8px;
+}
+
+.calendar-weekdays div {
+    text-align: center;
+    font-size: 12px;
+    font-weight: 600;
+    color: #6b7280;
+    padding: 8px 4px;
+}
+
+.calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1px;
+    background: #f1f5f9;
+    padding: 8px;
+}
+
+.calendar-day {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 14px;
+    background: white;
+    transition: all 0.2s;
+    border-radius: 4px;
+}
+
+.calendar-day:hover {
+    background: #f3f4f6;
+}
+
+.calendar-day.other-month {
+    color: #d1d5db;
+}
+
+.calendar-day.today {
+    background: #eff6ff;
+    color: #3b82f6;
+    font-weight: 600;
+}
+
+.calendar-day.selected {
+    background: #3b82f6;
+    color: white;
+}
+
+.calendar-day.in-range {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+.calendar-day.range-start,
+.calendar-day.range-end {
+    background: #3b82f6;
+    color: white;
+}
+
+.calendar-day.range-start {
+    border-radius: 4px 0 0 4px;
+}
+
+.calendar-day.range-end {
+    border-radius: 0 4px 4px 0;
+}
+
+.calendar-day.range-start.range-end {
+    border-radius: 4px;
+}
+
+.output {
+    background: #f8fafc;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+}
+
+.output p {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.output p:last-child {
+    margin-bottom: 0;
+}
+
+.output span {
+    color: #3b82f6;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    
+    .demo-section {
+        padding: 20px;
+    }
+    
+    .date-picker {
+        max-width: none;
+    }
+    
+    .calendar-dropdown {
+        left: 0;
+        right: 0;
+    }
+    
+    .calendar-day {
+        font-size: 12px;
+    }
+    
+    .calendar-header {
+        padding: 12px;
+    }
+}

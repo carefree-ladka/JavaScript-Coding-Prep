@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess UI Component</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="chess-game">
+            <div class="game-header">
+                <h1>Chess Game</h1>
+                <div class="game-controls">
+                    <button id="newGame" class="btn btn-primary">New Game</button>
+                    <button id="undoMove" class="btn btn-secondary">Undo</button>
+                    <button id="flipBoard" class="btn btn-secondary">Flip Board</button>
+                </div>
+            </div>
+            
+            <div class="game-info">
+                <div class="player-info">
+                    <div class="player white-player">
+                        <span class="player-name">White</span>
+                        <div class="captured-pieces" id="whiteCaptured"></div>
+                    </div>
+                    <div class="game-status">
+                        <div class="current-turn" id="currentTurn">White to move</div>
+                        <div class="game-state" id="gameState"></div>
+                    </div>
+                    <div class="player black-player">
+                        <span class="player-name">Black</span>
+                        <div class="captured-pieces" id="blackCaptured"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chess-board-container">
+                <div class="chess-board" id="chessBoard"></div>
+            </div>
+            
+            <div class="move-history">
+                <h3>Move History</h3>
+                <div class="moves-list" id="movesList"></div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

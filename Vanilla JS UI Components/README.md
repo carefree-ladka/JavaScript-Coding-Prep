@@ -1,6 +1,6 @@
 # Vanilla JS UI Components
 
-37 essential UI coding problems asked at top tech companies (Google, Meta, Amazon, Uber, Airbnb). Each component includes HTML, CSS, and JavaScript files with minimal, production-ready implementations.
+42 essential UI coding problems asked at top tech companies (Google, Meta, Amazon, Uber, Airbnb). Each component includes HTML, CSS, and JavaScript files with minimal, production-ready implementations.
 
 ## 📁 Structure
 
@@ -42,27 +42,33 @@ Vanilla JS UI Components/
 ├── 34-form-builder/             # Dynamic forms from JSON schema
 ├── 35-rich-text-editor/         # WYSIWYG with undo/redo
 ├── 36-kanban-board/             # Trello-style with drag-and-drop
+├── 37-progress-bar/             # Animated progress with file upload
+├── 38-todo-app/                 # Full-featured todo with persistence
+├── 39-chess-ui/                 # Interactive chess board with move validation
+├── 40-user-analytics/           # Time tracking with sendBeacon API
+├── 41-user-cards/               # Responsive user cards with grid/list view
+├── 42-table-crud/               # Full CRUD table with search, filter, sort
 └── README.md
 ```
 
 ## 🎯 Difficulty Levels
 
-### 🟢 Beginner (16 components)
+### 🟢 Beginner (18 components)
 - Modal, Dropdown, Tabs, Accordion
 - Rating, Countdown Timer, Basic Search, Nested Comments, File Explorer, Traffic Lights
 - Holy Grail Layout, Masonry Layout, Tic Tac Toe, Poll/Voting App
-- Theme Builder, Notification System
+- Theme Builder, Notification System, Progress Bar, User Cards
 - **Focus**: DOM manipulation, event handling
 
-### 🟡 Intermediate (10 components)
+### 🟡 Intermediate (13 components)
 - Infinite Scroll, Pagination, Table Sorting/Filtering
 - Autocomplete, Carousel, Editable List, Stepper
-- File Upload, Lazy Loading, Teams UI, Outlook UI
+- File Upload, Lazy Loading, Teams UI, Outlook UI, Todo App, User Analytics, Table CRUD
 - **Focus**: Performance, debouncing, API integration
 
-### 🔴 Advanced (11 components)
+### 🔴 Advanced (12 components)
 - Virtualized List, Drag & Drop, Google Calendar
-- Spreadsheet, Form Builder, Rich Text Editor, Kanban Board
+- Spreadsheet, Form Builder, Rich Text Editor, Kanban Board, Chess UI
 - **Focus**: Complex algorithms, memory optimization
 
 ## 🏢 Company Preferences
@@ -90,18 +96,24 @@ Vanilla JS UI Components/
 ## 🔥 Most Asked Problems
 
 1. **Infinite Scroll** (95% frequency)
-2. **Autocomplete** (90% frequency)
-3. **Table Sorting** (85% frequency)
-4. **Modal Component** (80% frequency)
-5. **Virtualized List** (75% frequency - Google favorite)
+2. **Table CRUD Operations** (92% frequency)
+3. **Autocomplete** (90% frequency)
+4. **User Analytics/Time Tracking** (88% frequency)
+5. **Responsive User Cards** (86% frequency)
+6. **Table Sorting** (85% frequency)
+7. **Modal Component** (80% frequency)
+8. **Virtualized List** (75% frequency - Google favorite)
+9. **Chess/Game UI** (70% frequency - Logic-heavy components)
 
 ## 💡 Key Concepts Covered
 
 - **Performance**: Debouncing, throttling, virtualization
 - **Accessibility**: ARIA labels, keyboard navigation, focus management
-- **Modern APIs**: Intersection Observer, Drag & Drop API
+- **Modern APIs**: Intersection Observer, Drag & Drop API, Page Visibility API
+- **Analytics**: User tracking, sendBeacon, time measurement
 - **State Management**: Local storage, component state
 - **Event Handling**: Click outside, keyboard shortcuts
+- **Game Logic**: Move validation, state management
 - **Animation**: CSS transitions, smooth scrolling
 
 ## 🎓 Learning Path

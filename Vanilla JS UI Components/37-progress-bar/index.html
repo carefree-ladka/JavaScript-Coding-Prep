@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress Bar Component</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Progress Bar Demo</h1>
+
+        <div class="demo-section">
+            <h3>Basic Progress Bar</h3>
+            <div class="progress-bar" data-progress="65">
+                <div class="progress-fill"></div>
+                <span class="progress-text">65%</span>
+            </div>
+        </div>
+
+        <div class="demo-section">
+            <h3>Animated Progress</h3>
+            <div class="progress-bar animated" data-progress="0">
+                <div class="progress-fill"></div>
+                <span class="progress-text">0%</span>
+            </div>
+            <div class="controls">
+                <button id="startAnimation" class="btn btn-primary">Start Animation</button>
+                <button id="resetAnimation" class="btn btn-secondary">Reset</button>
+            </div>
+        </div>
+
+        <div class="demo-section">
+            <h3>File Upload Progress</h3>
+            <div class="upload-demo">
+                <input type="file" id="fileInput" multiple>
+                <div id="uploadProgress" class="progress-container"></div>
+            </div>
+        </div>
+
+        <div class="demo-section">
+            <h3>Interactive Controls</h3>
+            <div class="progress-bar interactive" data-progress="50">
+                <div class="progress-fill"></div>
+                <span class="progress-text">50%</span>
+            </div>
+            <div class="controls">
+                <input type="range" id="progressSlider" min="0" max="100" value="50">
+                <div class="button-group">
+                    <button id="decreaseBtn" class="btn btn-outline">-10</button>
+                    <button id="increaseBtn" class="btn btn-outline">+10</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

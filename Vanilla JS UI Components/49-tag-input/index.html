@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tag Input Component</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Tag Input Component</h1>
+        
+        <div class="demo-section">
+            <h3>Basic Tag Input</h3>
+            <div class="tag-input" id="tagInput1">
+                <div class="tags-container"></div>
+                <input type="text" placeholder="Add tags..." class="tag-input-field">
+            </div>
+        </div>
+        
+        <div class="demo-section">
+            <h3>Tag Input with Suggestions</h3>
+            <div class="tag-input" id="tagInput2">
+                <div class="tags-container"></div>
+                <input type="text" placeholder="Type to see suggestions..." class="tag-input-field">
+                <div class="suggestions-dropdown"></div>
+            </div>
+        </div>
+        
+        <div class="demo-section">
+            <h3>Limited Tags (Max 5)</h3>
+            <div class="tag-input" id="tagInput3">
+                <div class="tags-container"></div>
+                <input type="text" placeholder="Max 5 tags..." class="tag-input-field">
+            </div>
+        </div>
+        
+        <div class="demo-section">
+            <h3>Current Tags</h3>
+            <div class="output">
+                <h4>Basic Tags:</h4>
+                <pre id="output1">[]</pre>
+                <h4>Suggestion Tags:</h4>
+                <pre id="output2">[]</pre>
+                <h4>Limited Tags:</h4>
+                <pre id="output3">[]</pre>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
