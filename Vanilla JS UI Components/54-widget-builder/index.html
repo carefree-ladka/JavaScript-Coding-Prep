@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Config-Driven Widget Builder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Config-Driven Widget Builder</h1>
+        
+        <div id="poll-widget"></div>
+        <div id="counter-widget"></div>
+        <div id="progress-widget"></div>
+        
+        <div class="integration-example">
+            <h2>Client Integration</h2>
+            <pre><code>&lt;script src="widget-builder.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+  // Create Poll Widget
+  WidgetBuilder.create({
+    type: 'poll',
+    container: '#my-poll',
+    config: {
+      title: 'Favorite Language',
+      options: ['JavaScript', 'Python', 'Java'],
+      colors: ['#f39c12', '#3498db', '#e74c3c']
+    }
+  });
+
+  // Create Counter Widget
+  WidgetBuilder.create({
+    type: 'counter',
+    container: '#my-counter',
+    config: {
+      title: 'Click Counter',
+      initial: 0,
+      step: 5,
+      color: '#9b59b6'
+    }
+  });
+&lt;/script&gt;</code></pre>
+        </div>
+    </div>
+    
+    <script src="widget-builder.js"></script>
+    <script>
+        // Demo widgets
+        WidgetBuilder.create({
+            type: 'poll',
+            container: '#poll-widget',
+            config: {
+                title: 'Favorite Programming Language',
+                options: ['JavaScript', 'Python', 'Java', 'TypeScript'],
+                colors: ['#f39c12', '#3498db', '#e74c3c', '#9b59b6']
+            }
+        });
+
+        WidgetBuilder.create({
+            type: 'counter',
+            container: '#counter-widget',
+            config: {
+                title: 'Click Counter',
+                initial: 0,
+                step: 1,
+                color: '#e67e22'
+            }
+        });
+
+        WidgetBuilder.create({
+            type: 'progress',
+            container: '#progress-widget',
+            config: {
+                title: 'Task Progress',
+                max: 100,
+                color: '#2ecc71'
+            }
+        });
+    </script>
+</body>
+</html>

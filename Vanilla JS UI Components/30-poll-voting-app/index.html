@@ -3,38 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Poll/Voting App</title>
+    <title>Voting Poll</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="poll-container">
-        <div class="poll-header">
-            <h1>📊 Live Poll</h1>
-            <button class="create-poll-btn" onclick="pollApp.showCreateModal()">+ Create Poll</button>
-        </div>
+        <h2>Which is your favorite programming language?</h2>
+        <div class="total-votes">Total Votes: <span id="totalCount">0</span></div>
         
-        <div class="polls-list" id="pollsList"></div>
-    </div>
-    
-    <div class="modal" id="createModal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2>Create New Poll</h2>
-                <button onclick="pollApp.hideCreateModal()">&times;</button>
+        <div class="options">
+            <div class="option" data-option="0">
+                <button class="vote-btn">JavaScript</button>
+                <div class="progress-container">
+                    <div class="progress-bar" style="background: #f39c12"></div>
+                    <span class="percentage">0%</span>
+                </div>
+                <span class="vote-count">0 votes</span>
             </div>
-            <form onsubmit="pollApp.createPoll(event)">
-                <input type="text" placeholder="Poll question..." id="pollQuestion" required>
-                <div class="options-container">
-                    <input type="text" placeholder="Option 1" class="option-input" required>
-                    <input type="text" placeholder="Option 2" class="option-input" required>
-                    <input type="text" placeholder="Option 3" class="option-input">
-                    <input type="text" placeholder="Option 4" class="option-input">
+            
+            <div class="option" data-option="1">
+                <button class="vote-btn">Python</button>
+                <div class="progress-container">
+                    <div class="progress-bar" style="background: #3498db"></div>
+                    <span class="percentage">0%</span>
                 </div>
-                <div class="modal-actions">
-                    <button type="button" onclick="pollApp.hideCreateModal()">Cancel</button>
-                    <button type="submit">Create Poll</button>
+                <span class="vote-count">0 votes</span>
+            </div>
+            
+            <div class="option" data-option="2">
+                <button class="vote-btn">Java</button>
+                <div class="progress-container">
+                    <div class="progress-bar" style="background: #e74c3c"></div>
+                    <span class="percentage">0%</span>
                 </div>
-            </form>
+                <span class="vote-count">0 votes</span>
+            </div>
+            
+            <div class="option" data-option="3">
+                <button class="vote-btn">TypeScript</button>
+                <div class="progress-container">
+                    <div class="progress-bar" style="background: #9b59b6"></div>
+                    <span class="percentage">0%</span>
+                </div>
+                <span class="vote-count">0 votes</span>
+            </div>
         </div>
     </div>
     

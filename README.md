@@ -155,6 +155,11 @@ Complete JavaScript Mastery/
 
 ## 🔧 Usage
 
+### Setup TypeScript Support
+```bash
+npm install
+```
+
 ### JavaScript Solutions
 ```javascript
 // Problem description and approach
@@ -164,6 +169,16 @@ const solution = (input) => {
 
 // Test Cases
 console.log(solution(testInput)); // expected output
+```
+
+### TypeScript Solutions
+```bash
+# Direct execution
+npx ts-node "JavaScript Coding/TaskQueue.ts"
+
+# Or compile and run
+npm run build
+node dist/JavaScript\ Coding/TaskQueue.js
 ```
 
 ### SQL Solutions

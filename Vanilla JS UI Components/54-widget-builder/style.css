@@ -1,0 +1,196 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f5f7fa;
+  padding: 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #2c3e50;
+}
+
+.widget {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.widget:hover {
+  transform: translateY(-2px);
+}
+
+.widget h3 {
+  margin-bottom: 15px;
+  color: #34495e;
+  text-align: center;
+}
+
+/* Poll Widget */
+.poll-widget .total-votes {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: #7f8c8d;
+}
+
+.option {
+  margin-bottom: 15px;
+}
+
+.vote-btn {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background: #34495e;
+  color: white;
+  cursor: pointer;
+  margin-bottom: 8px;
+  transition: background 0.3s;
+}
+
+.vote-btn:hover {
+  background: #2c3e50;
+}
+
+.progress {
+  position: relative;
+  background: #ecf0f1;
+  border-radius: 10px;
+  height: 20px;
+  margin-bottom: 5px;
+}
+
+.bar {
+  height: 100%;
+  border-radius: 10px;
+  transition: width 0.5s ease;
+  width: 0%;
+}
+
+.percent {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.count {
+  font-size: 12px;
+  color: #7f8c8d;
+}
+
+/* Counter Widget */
+.counter-display {
+  font-size: 48px;
+  font-weight: bold;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.counter-controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.counter-controls button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background: #3498db;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.counter-controls button:hover {
+  background: #2980b9;
+}
+
+/* Progress Widget */
+.progress-bar {
+  position: relative;
+  background: #ecf0f1;
+  border-radius: 10px;
+  height: 30px;
+  margin: 20px 0;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 10px;
+  transition: width 0.5s ease;
+  width: 0%;
+}
+
+.progress-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.progress-controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.btn-progress {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  background: #2ecc71;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-progress:hover {
+  background: #27ae60;
+}
+
+/* Integration Example */
+.integration-example {
+  background: #2c3e50;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 30px;
+}
+
+.integration-example h2 {
+  margin-bottom: 15px;
+}
+
+.integration-example pre {
+  background: #34495e;
+  padding: 15px;
+  border-radius: 5px;
+  overflow-x: auto;
+}
+
+.integration-example code {
+  color: #e74c3c;
+}
